@@ -9,7 +9,8 @@ A music app where users login with their account and displays user favorites art
 
 
 - CSS
-- Mongodb
+- MongoDB
+- Mongoose
 - Express
 - Javascript
 - Liquid
