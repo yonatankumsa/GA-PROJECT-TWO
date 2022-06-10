@@ -21,5 +21,5 @@ A music app where users login with their account and displays user favorites art
 
 ![](https://i.imgur.com/E5F9rpw.jpg)
 ![](https://i.imgur.com/RXQEMCF.jpg)
-![](https://i.imgur.com/nu5ASHd.jpg)
+![](https://i.imgur.com/O7cqO6x.png)
 
