@@ -18,4 +18,7 @@ A music app where users login with their account and displays user favorites art
 
 
 
+![](https://i.imgur.com/ZFLRT7o.jpg)
+![](https://i.imgur.com/mEr7YO4.jpg)
+![](https://i.imgur.com/l4beJwF.jpg)
 
