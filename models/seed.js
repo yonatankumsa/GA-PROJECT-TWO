@@ -1,12 +1,12 @@
 const mongoose = require("./connection");
-const Fruit = require("./fruit");
+const Artist = require("./artist");
 
 const db = mongoose.connection;
 
 
 db.on("open", () => {
 
-  const startFruits = [
+  const startArtists = [
     { name: "Orange", color: "orange", readyToEat: false },
     { name: "Grape", color: "purple", readyToEat: false },
     { name: "Banana", color: "orange", readyToEat: false },
@@ -14,14 +14,14 @@ db.on("open", () => {
     { name: "Coconut", color: "brown", readyToEat: false },
   ];
 
-  // Delete all fruits
+  // Delete all Artists
   Fruit.deleteMany({})
-    .then((deletedFruits) => {
-      // add the starter fruits
-      Fruit.create(startFruits)
-        .then((newFruits) => {
-          // log the new fruits to confirm their creation
-          console.log(newFruits);
+    .then((deletedArtists) => {
+      // add the starter Artists
+      Fruit.create(startArtists)
+        .then((newArtists) => {
+          // log the new Artists to confirm their creation
+          console.log(newArtists);
           db.close();
         })
         .catch((error) => {
