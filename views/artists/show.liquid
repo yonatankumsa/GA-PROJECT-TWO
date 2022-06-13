@@ -1,0 +1,15 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <article>
+    <h2>
+    
+    </h2>
+    <h3>{{ artist.color }}</h3>
+    <a href="/Artists/{{ artist._id }}/edit"><button>Edit</button></a>
+    <form action="/Artists/{{ artist._id }}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete" />
+    </form>
+    <a href="/Artists/"><button>Back to Main</button></a>
+  </article>
+</div>
+{% endblock %}

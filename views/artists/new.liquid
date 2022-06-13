@@ -1,0 +1,17 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/Artists" method="post">
+    <fieldset>
+      <legend>Create a New Artist</legend>
+      <label>
+        NAME:<input type="text" name="name" placeholder="enter name" />
+      </label>
+      <label>
+       <input type="text" name="color" placeholder="enter  name" />
+      </label>
+      
+    </fieldset>
+    <input type="submit" value="create new artist" />
+  </form>
+</div>
+{% endblock %}
