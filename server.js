@@ -14,15 +14,11 @@ const app = require("liquid-express-views")(express(), {
   root: [path.resolve(__dirname, "views/")],
 });
 
-/////////////////////////////////////////////////////
-// Middleware
-/////////////////////////////////////////////////////
 app.use(morgan("tiny")); //logging
-app.use(methodOverride("_method")); // override for put and delete requests from forms
-app.use(express.urlencoded({ extended: true })); // parse urlencoded request bodies
-app.use(express.static("public")); // serve files from public statically
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true })); 
+app.use(express.static("public")); 
 
-// middleware to setup session
 app.use(
   session({
     secret: process.env.SECRET,
@@ -32,24 +28,15 @@ app.use(
   })
 );
 
-////////////////////////////////////////////
-// Routes
-////////////////////////////////////////////
+app.use("/artists", ArtistsRouter); 
+app.use("/users", UserRouter); 
 
-app.use("/artists", ArtistsRouter); // send all "/fruits" routes to fruit router
-app.use("/users", UserRouter); // send all "/user" routes to user router
 
-//////////////////////////////////////////////
-// Server Listener
-//////////////////////////////////////////////
-const PORT = process.env.PORT; // PORT from .env file
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Now Listening on port ${PORT}`);
 });
 
-////////////////////////////////////////////
-// Routes
-////////////////////////////////////////////
 app.get("/", (req, res) => {
   res.render("index.liquid");
 });

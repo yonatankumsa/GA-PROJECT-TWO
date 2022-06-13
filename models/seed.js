@@ -1,20 +1,11 @@
 const mongoose = require("./connection");
 const Fruit = require("./fruit");
 
-///////////////////////////////////////////
-// Seed Code
-////////////////////////////////////////////
-
-// save the connection in a variable
 const db = mongoose.connection;
 
-// Make sure code is not run till connected
-db.on("open", () => {
-  ///////////////////////////////////////////////
-  // Write your Seed Code Below
-  //////////////////////////////////////////////
 
-  // Run any database queries in this function
+db.on("open", () => {
+
   const startFruits = [
     { name: "Orange", color: "orange", readyToEat: false },
     { name: "Grape", color: "purple", readyToEat: false },
@@ -43,7 +34,5 @@ db.on("open", () => {
       db.close();
     });
 
-  ///////////////////////////////////////////////
-  // Write your Seed Code Above
-  //////////////////////////////////////////////
+
 });
