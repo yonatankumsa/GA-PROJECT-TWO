@@ -10,10 +10,6 @@ router.use((req, res, next) => {
   }
 });
     
-fetch('https://api.napster.com/v2.2/playlists/top?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
-.then(response => response.json())
-.then(response => {console.log(response)
-console.log( response.artists[0].links.images.href)
 
 
 router.get("/", (req, res) => {
@@ -33,10 +29,6 @@ router.get("/", (req, res) => {
     });
 });
 
-
-
-})
-.catch(err => console.error(err));
 
 
 
