@@ -17,10 +17,10 @@ fetch('https://api.napster.com/v2.2/playlists/top?apikey=ZTk4OGExZDgtMGRlNS00OTg
 
 
 
-// fetch('https://api.napster.com/v2.0/playlists/pp.225974698/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
-// .then(response => response.json())
-// .then(response => {console.log(response.tracks[0].previewURL)
-//     response.tracks[0].previewURL
+fetch('https://api.napster.com/v2.0/playlists/pp.225974698/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
+.then(response2 => response2.json())
+.then(response2 => {console.log(response2.tracks[0].previewURL)
+    response2.tracks[0].previewURL
 
 
 router.get("/", (req, res) => {
@@ -123,8 +123,8 @@ router.delete("/:id", (req, res) => {
 
 
 
-// })
-// .catch(err => console.error(err));
+})
+.catch(err => console.error(err));
 
 
 
