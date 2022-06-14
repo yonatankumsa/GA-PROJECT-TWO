@@ -4,8 +4,8 @@
 const { Schema, model } = mongoose;
 const artistsSchema = new Schema({
     name: String,
-    genre: String,
-    image:String,
+    album: String,
+    audio:String,
     username: String,
   });
 

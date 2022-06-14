@@ -40,25 +40,30 @@ router.get("/", (req, res) => {
 
 // new route
 router.get("/new", (req, res) => {
-  res.render("artists/new.liquid");
-});
+  Artists.find({ username: req.session.username })
 
-router.post("/", (req, res) => {
-  req.body.username = req.session.username;
-
-  Artists.create(req.body)
     .then((artists) => {
-      res.redirect("/Artists");
-    })
-
-    .catch((error) => {
-      console.log(error);
-      res.json({ error });
-    });
+      console.log(artists);
+  res.render("artists/new.liquid",{ artists });
+})
 });
+
+// router.post("/", (req, res) => {
+//   req.body.username = req.session.username;
+
+//   Artists.create(req.body)
+//     .then((artists) => {
+//       res.redirect("/Artists");
+//     })
+
+//     .catch((error) => {
+//       console.log(error);
+//       res.json({ error });
+//     });
+// });
 
 router.get("/playlists",(req,res)=>{
-  res.render("artists/playlists.liquid")
+  res.render("artists/playlists.liquid",)
 })
 
 
@@ -67,7 +72,7 @@ router.post("/playlists",(req,res)=>{
 
   Artists.create(req.body)
     .then((artists) => {
-      res.redirect("/Artists");
+      res.redirect("/Artists/playlists");
     })
     .catch((error) => {
       console.log(error);

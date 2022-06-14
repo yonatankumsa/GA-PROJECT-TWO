@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/artists/new"><button>Create A Playlist</button></a>
-
+    
+    <form action="/Artists/new" method="get">
+        <input type="submit" value="Create A Playlist" />
+</form>
     {% for a in artists %}
   
     <article>
