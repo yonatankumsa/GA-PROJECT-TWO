@@ -37,11 +37,6 @@ router.get("/", (req, res) => {
 
 
 
-})
-.catch(err => console.error(err));
-
-
-
 
 // new route
 router.get("/new", (req, res) => {
@@ -65,14 +60,16 @@ router.get("/:id", (req, res) => {
   const id = req.params.id;
   fetch('https://api.napster.com/v2.0/playlists/'+ id +'/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
   .then(response2 => response2.json())
-  .then(response2 => {console.log(response2.tracks[0].previewURL)
+  .then(response2 => {
       
    
   
   Artists.findById(id)
     .then((artist) => {
       res.render("artists/show.liquid", { artist ,
-        src:response2.tracks[0].previewURL
+        src:response2.tracks,
+     
+        response
       });
     })
   
@@ -123,6 +120,11 @@ router.delete("/:id", (req, res) => {
       res.json({ error });
     });
 });
+
+})
+.catch(err => console.error(err));
+
+
 
 
 

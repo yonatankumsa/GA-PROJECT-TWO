@@ -4,7 +4,11 @@
     <h2>
     
     </h2>
- 
+    {% for e in  src %}
+<img src="{{ response.images[0].url }}" alt="">
+<h1>{{ e.tracks.artistName }}</h1>
+<h2>{{ e.tracks.albumName}}</h2>
+{% endfor %}
     <audio class="audio" controls class= "audio">
       <source class="audio" src="{{ src }}" type="audio/mpeg">
     </audio>
@@ -14,6 +18,9 @@
       <input type="submit" value="Delete" />
     </form>
     <a href="/Artists/"><button>Back to Main</button></a>
+
+
+
   </article>
 </div>
 {% endblock %}
