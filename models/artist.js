@@ -5,10 +5,10 @@ const { Schema, model } = mongoose;
 const artistsSchema = new Schema({
     name: String,
     album: String,
-    audio:String,
+    aud: String,
     username: String,
   });
 
-const Artits = model("Artist", artistsSchema);
+const Artists = model("Artist", artistsSchema);
 
-module.exports = Artits;
+module.exports = Artists;

@@ -13,7 +13,7 @@ router.use((req, res, next) => {
  
 fetch('https://api.napster.com/v2.2/playlists/top?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
 .then(response => response.json())
-.then(response => {console.log(response)
+.then(response => {
 
 
 
@@ -63,13 +63,17 @@ router.get("/new", (req, res) => {
 // });
 
 router.get("/playlists",(req,res)=>{
-  res.render("artists/playlists.liquid",)
-})
+  Artists.find({ username: req.session.username  })
 
+  .then((artists) => {
+    console.log(artists);
+  res.render("artists/playlists.liquid",{artists})
+})
+})
 
 router.post("/playlists",(req,res)=>{
   req.body.username = req.session.username;
-
+  //  const id = req.params.id
   Artists.create(req.body)
     .then((artists) => {
       res.redirect("/Artists/playlists");
@@ -81,8 +85,25 @@ router.post("/playlists",(req,res)=>{
 
 })
 
-router.get("/:id", (req, res) => {
+
+router.get("/:id/edit", (req, res) => {
   const id = req.params.id;
+
+  Artists.findById(id)
+    .then((artists) => {
+      res.render("artists/edit.liquid", { artists });
+    })
+
+    .catch((error) => {
+      console.log(error);
+      res.json({ error });
+    });
+});
+
+
+router.get("/:id", (req, res) => {
+  // const id2 = JSON.parse(req.params.id)
+  const id = req.params.id
   fetch('https://api.napster.com/v2.0/playlists/'+ id +'/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
   .then(response2 => response2.json())
   .then(response2 => {
@@ -93,7 +114,7 @@ router.get("/:id", (req, res) => {
     .then((artist) => {
       res.render("artists/show.liquid", { artist ,
         src:response2.tracks,
-        id:id,
+        // id:id,
       response
       });
     })
@@ -109,23 +130,9 @@ router.put("/:id", (req, res) => {
   const id = req.params.id;
 
   Artists.findByIdAndUpdate(id, req.body, { new: true })
-    .then((fruit) => {
-      res.redirect("/Artists");
+    .then((artists) => {
+      res.redirect("/artists/playlists");
     })
-    .catch((error) => {
-      console.log(error);
-      res.json({ error });
-    });
-});
-
-router.get("/:id/edit", (req, res) => {
-  const id = req.params.id;
-
-  Artists.findById(id)
-    .then((fruit) => {
-      res.render("artists/edit.liquid", { fruit });
-    })
-
     .catch((error) => {
       console.log(error);
       res.json({ error });
@@ -133,11 +140,11 @@ router.get("/:id/edit", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  const id = req.params.id;
+  const id =( req.params.id)
 
   Artists.findByIdAndRemove(id)
-    .then((fruit) => {
-      res.redirect("/Artists");
+    .then((artists) => {
+      res.redirect("/artists/playlists");
     })
     // send error as json
     .catch((error) => {
@@ -146,9 +153,9 @@ router.delete("/:id", (req, res) => {
     });
 });
 
+
 })
 .catch(err => console.error(err));
-
 
 
 

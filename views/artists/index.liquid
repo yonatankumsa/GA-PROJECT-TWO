@@ -1,21 +1,23 @@
 {% layout "layout.liquid" %} {% block content %}
 <div>
-  <a href="/artists/playlists"><button>Playlists</button></a>
-    
+ 
+<a href="/artists/playlists"><button>playlist</button></a>
+
     <a href="/users/logout"><button>Logout</button></a>
 
-  {% for a in artists %}
-<!--   
+<!-- {% for a in artists %} 
+
   <article>
     <a href="/artists/{{ a._id }}"> <h1> {{ a.name }} </h1> 
     
     </a>
   </article>
-  {% endfor %} -->
+  {% endfor %}  -->
 
 
  
   {% for e in id%}
+
 <div>
   <a href="/artists/{{ e.id }}"> 
 <h1>{{ e.name  }}</h1>

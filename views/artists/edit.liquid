@@ -1,31 +1,35 @@
 {% layout "layout.liquid" %} {% block content %}
-<div>
-  <form action="/artists/{{._id}}?_method=PUT" method="post">
+  <form action="/artists/{{artists._id}}?_method=PUT" method="POST">
     <fieldset>
-      <legend>Edit {{fruit.name}}</legend>
       <label>
         NAME:<input
           type="text"
           name="name"
-          placeholder="enter fruit name"
-          value="{{fruit.name}}"
+          placeholder="enter artist's name"
+          value="{{artists.name}}"
         />
       </label>
       <label>
-        COLOR:<input
+        ALBUM:<input
           type="text"
-          name="color"
-          placeholder="enter fruit name"
-          value="{{fruit.color}}"
+          name="album"
+          placeholder="enter artist's album"
+          value="{{artists.album}}"
         />
       </label>
       <label>
-        READY TO EAT:<input type="checkbox" name="readyToEat" 
-        {% if
-        fruit.readyToEat == true %} checked {% endif %} />
+        <label>
+         Audio link:<input
+            type="text"
+            name="aud"
+            placeholder="enter audio file"
+            value="{{artists.aud}}"
+          />
+        </label>
       </label>
+      <input type="submit" value="Edit and Submit" />
     </fieldset>
-    <input type="submit" value="Edit {{fruit.name}}" />
+  
   </form>
-</div>
-{% endblock %}
+
+  {% endblock %}

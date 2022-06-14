@@ -1,6 +1,6 @@
 {% layout "layout.liquid" %} {% block content %}
 <div>
-  <form action="/Artists/playlists" method="post">
+  <form action="/Artists/playlists" method="POST">
     <fieldset>
       <legend>Create a New Artist</legend>
       <label>
@@ -10,7 +10,7 @@
        <input type="text" name="album" placeholder="enter album name" />
       </label>
       <label>
-        <input type="text" name="image" placeholder="audio file or link" />
+        <input type="text" name="aud" placeholder="audio file or link" />
       </label>
     </fieldset>
     <input type="submit" value="create new artist" />

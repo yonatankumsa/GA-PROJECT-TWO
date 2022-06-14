@@ -1,23 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% layout "layout.liquid" %} {% block content %}
     
     <form action="/Artists/new" method="get">
         <input type="submit" value="Create A Playlist" />
-</form>
-    {% for a in artists %}
   
-    <article>
+</form>
+<a href="/Artists/"><button>Back to Main</button></a>
+    {% for a in artists %}
+<div>
       <h1> {{ a.name }} </h1>
-      
-      </a>
-    </article>
+      <h2>{{ a.album }}</h2>
+
+<audio  controls >
+    <source src="{{ a.audio }}" type="audio/mpeg">
+  </audio>
+ 
+
+  <form action="/Artists/{{ a._id }}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete" />
+  </form>
+  <a href="/Artists/{{ a._id }}/edit"><button>Edit</button></a>
+
+
+
+
+
+</div>
+    
     {% endfor %}
-</body>
-</html> 
+    {% endblock %}
