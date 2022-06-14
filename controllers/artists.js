@@ -33,9 +33,6 @@ router.get("/", (req, res) => {
     });
 });
 
-
-
-
 // new route
 router.get("/new", (req, res) => {
   Artists.find({ username: req.session.username })
