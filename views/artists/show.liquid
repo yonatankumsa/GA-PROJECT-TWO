@@ -7,15 +7,22 @@
 <div>
 <h2>{{ e.artistName }}</h2>
 <h3>{{ e.name }}</h3>
-<h4>{{ e.albumName }}</h4>
+<!-- <h4>{{ e.albumName }}</h4> -->
 
 <audio class="audio" controls >
   <source class="audio" src="{{ e.previewURL }}" type="audio/mpeg">
 </audio>
 </div>
 
+<form action="" method="POST">
+  <input type="submit" value="Add to Playlist" />
+</form>
+
 {% endfor %}
-   
+
+<img src="https://direct.rhapsody.com/imageserver/v2.2/albums/pp.342183375/images/300x300.jpg" alt="">
+
+
     <a href="/Artists/{{ artist._id }}/edit"><button>Edit</button></a>
     <form action="/Artists/{{ artist._id }}?_method=DELETE" method="POST">
       <input type="submit" value="Delete" />

@@ -68,8 +68,8 @@ router.get("/:id", (req, res) => {
     .then((artist) => {
       res.render("artists/show.liquid", { artist ,
         src:response2.tracks,
-     
-        response
+        id:id,
+      response
       });
     })
   
