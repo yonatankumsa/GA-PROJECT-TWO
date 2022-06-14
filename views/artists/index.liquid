@@ -6,12 +6,16 @@
   {% for a in artists %}
   
   <article>
-    <a href="/artists/{{ a._id }}">
-      <h2>
-        {{ a.name }}
-      </h2>
-    </a>
+    <a href="/artists/{{ a._id }}"><h1> {{ a.name }} </h1>  </a>
   </article>
   {% endfor %}
+
+  {% for e in response.playlists %}
+
+ 
+  <img src="{{ e.images.url  }}" alt="">
+    
+  {% endfor %}
+
 </div>
 {% endblock %}

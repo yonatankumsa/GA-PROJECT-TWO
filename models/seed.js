@@ -4,35 +4,11 @@ const Artist = require("./artist");
 const db = mongoose.connection;
 
 
-db.on("open", () => {
-
-  const startArtists = [
-    { name: "Orange", color: "orange", readyToEat: false },
-    { name: "Grape", color: "purple", readyToEat: false },
-    { name: "Banana", color: "orange", readyToEat: false },
-    { name: "Strawberry", color: "red", readyToEat: false },
-    { name: "Coconut", color: "brown", readyToEat: false },
-  ];
-
-  // Delete all Artists
-  Fruit.deleteMany({})
-    .then((deletedArtists) => {
-      // add the starter Artists
-      Fruit.create(startArtists)
-        .then((newArtists) => {
-          // log the new Artists to confirm their creation
-          console.log(newArtists);
-          db.close();
-        })
-        .catch((error) => {
-          console.log(error);
-          db.close();
-        });
-    })
-    .catch((error) => {
-      console.log(error);
-      db.close();
-    });
+fetch('http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=1f64c77f198e662756b17883ce861df4&format=json')
+.then(response => response.json())
+.then(response => {
+console.log(response)
+})
 
 
-});
+
