@@ -16,8 +16,6 @@ fetch('https://api.napster.com/v2.2/playlists/top?apikey=ZTk4OGExZDgtMGRlNS00OTg
 .then(response => {
 
 
-
-
 router.get("/", (req, res) => {
   Artists.find({ username: req.session.username })
 
