@@ -10,11 +10,16 @@
   </article>
   {% endfor %}
 
-  
+
   <audio class="audio" controls class= "audio">
     <source class="audio" src="{{ src }}" type="audio/mpeg">
   </audio>
  
+  {% for e in id%}
+<h1>{{ e.name  }}</h1>
+  <img src="{{ e.images[0].url }}" alt="">
+    
+  {% endfor %}
 
 </div>
 {% endblock %}

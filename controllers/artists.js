@@ -15,13 +15,12 @@ fetch('https://api.napster.com/v2.2/playlists/top?apikey=ZTk4OGExZDgtMGRlNS00OTg
 .then(response => response.json())
 .then(response => {console.log(response)
 
-let id = response
 
 
-fetch('https://api.napster.com/v2.0/playlists/pp.225974698/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
-.then(response => response.json())
-.then(response => {console.log(response.tracks[0].previewURL)
-    response.tracks[0].previewURL
+// fetch('https://api.napster.com/v2.0/playlists/pp.225974698/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
+// .then(response => response.json())
+// .then(response => {console.log(response.tracks[0].previewURL)
+//     response.tracks[0].previewURL
 
 
 router.get("/", (req, res) => {
@@ -30,7 +29,7 @@ router.get("/", (req, res) => {
     .then((artists) => {
       console.log(artists);
       res.render("artists/index.liquid", { artists ,
-         src: response.tracks[0].previewURL
+     id:response.playlists
       
       });
     })
@@ -124,8 +123,8 @@ router.delete("/:id", (req, res) => {
 
 
 
-})()
-.catch(err => console.error(err));
+// })
+// .catch(err => console.error(err));
 
 
 
