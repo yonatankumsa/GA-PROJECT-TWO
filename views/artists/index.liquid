@@ -11,16 +11,14 @@
   {% endfor %}
 
 
-  <audio class="audio" controls class= "audio">
-    <source class="audio" src="{{ src }}" type="audio/mpeg">
-  </audio>
  
   {% for e in id%}
-
+<div>
   <a href="/artists/{{ e.id }}"> 
 <h1>{{ e.name  }}</h1>
   <img src="{{ e.images[0].url }}" alt="">
 </a>
+</div>
   {% endfor %}
 
 </div>

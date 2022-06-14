@@ -1,18 +1,21 @@
 {% layout "layout.liquid" %} {% block content %}
 <div>
   <article>
-    <h2>
-    
-    </h2>
-    {% for e in  src %}
-<img src="{{ response.images[0].url }}" alt="">
-<h1>{{ e.tracks.artistName }}</h1>
-<h2>{{ e.tracks.albumName}}</h2>
-{% endfor %}
-    <audio class="audio" controls class= "audio">
-      <source class="audio" src="{{ src }}" type="audio/mpeg">
-    </audio>
 
+    
+    {% for e in  src %}
+<div>
+<h2>{{ e.artistName }}</h2>
+<h3>{{ e.name }}</h3>
+<h4>{{ e.albumName }}</h4>
+
+<audio class="audio" controls >
+  <source class="audio" src="{{ e.previewURL }}" type="audio/mpeg">
+</audio>
+</div>
+
+{% endfor %}
+   
     <a href="/Artists/{{ artist._id }}/edit"><button>Edit</button></a>
     <form action="/Artists/{{ artist._id }}?_method=DELETE" method="POST">
       <input type="submit" value="Delete" />
