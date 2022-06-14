@@ -8,5 +8,14 @@
 </head>
 <body>
     <a href="/artists/new"><button>Create A Playlist</button></a>
+
+    {% for a in artists %}
+  
+    <article>
+      <h1> {{ a.name }} </h1>
+      
+      </a>
+    </article>
+    {% endfor %}
 </body>
-</html>
+</html> 

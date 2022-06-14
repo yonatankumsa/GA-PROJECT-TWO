@@ -56,6 +56,26 @@ router.post("/", (req, res) => {
       res.json({ error });
     });
 });
+
+router.get("/playlists",(req,res)=>{
+  res.render("artists/playlists.liquid")
+})
+
+
+router.post("/playlists",(req,res)=>{
+  req.body.username = req.session.username;
+
+  Artists.create(req.body)
+    .then((artists) => {
+      res.redirect("/Artists");
+    })
+    .catch((error) => {
+      console.log(error);
+      res.json({ error });
+    });
+
+})
+
 router.get("/:id", (req, res) => {
   const id = req.params.id;
   fetch('https://api.napster.com/v2.0/playlists/'+ id +'/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
