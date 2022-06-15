@@ -2,11 +2,12 @@
     
     <form action="/Artists/new" method="get">
         <input type="submit" value="Create A Playlist" />
+      </form><br>
         <a href="/Artists/"><button>Back to Main</button></a>
-</form>
+
 
     {% for a in artists %}
-<div>
+<div class="pldiv">
       <h1> {{ a.name }} </h1>
       <h2>{{ a.album }}</h2>
 
