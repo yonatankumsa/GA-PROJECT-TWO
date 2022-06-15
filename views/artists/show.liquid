@@ -2,6 +2,7 @@
 <div>
   <article>
 
+    <form action="/Artists/playlists" method="POST">
     
     {% for e in  src %}
 <div>
@@ -14,11 +15,11 @@
 </audio>
 </div>
 
-<form action="" method="POST">
-  <input type="submit" value="Add to Playlist" />
-</form>
-
+ 
+<input type="submit" value="Add to Playlist" />
 {% endfor %}
+
+</form>
 
   </article>
 </div>

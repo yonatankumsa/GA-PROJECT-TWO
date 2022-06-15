@@ -15,14 +15,14 @@
   </audio>
  
 
+
+  <h2>{{ a.artistName }}</h2>
+  <h3>{{ a.name }}</h3>
+
   <form action="/Artists/{{ a._id }}?_method=DELETE" method="POST">
     <input type="submit" value="Delete" />
   </form>
   <a href="/Artists/{{ a._id }}/edit"><button>Edit</button></a>
-
-
-
-
 
 </div>
     
