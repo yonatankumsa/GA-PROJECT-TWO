@@ -9,9 +9,9 @@ router.use((req, res, next) => {
     res.redirect("/users/login");
   }
 });
-    
- 
-fetch('https://api.napster.com/v2.2/playlists/top?apikey=NTZmZjkwMTEtODAxZC00MmYwLThlYWMtY2MxM2I5MzBiY2Qy&limit=40')
+  
+
+const api = fetch('https://api.napster.com/v2.2/playlists/top?apikey=NTZmZjkwMTEtODAxZC00MmYwLThlYWMtY2MxM2I5MzBiY2Qy&limit=40')
 .then(response => response.json())
 .then(response => {
 
