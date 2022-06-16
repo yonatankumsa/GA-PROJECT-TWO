@@ -76,6 +76,10 @@ button,input,a{
  align-items: center;
 align-content: center;
 }
+form{
+    display: inline-block;
+
+}
 audio{
 left:50%;
 text-align: center;

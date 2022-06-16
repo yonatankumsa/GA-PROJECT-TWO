@@ -1,9 +1,6 @@
 {% layout "layout.liquid" %} {% block content %}
   <article>
 
-   
-   
-
     {% for e in  src %}
     <form action="/artists/playlists" method="POST">
 <div class="showdiv">
@@ -19,12 +16,10 @@
 <input type="submit" value="Add to Favorites" />
 </form>
 
-
 </div>
 
 
 {% endfor %}
-
 
 </article>
 {% endblock %}
