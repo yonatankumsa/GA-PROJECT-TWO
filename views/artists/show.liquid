@@ -1,31 +1,31 @@
 {% layout "layout.liquid" %} {% block content %}
   <article>
 
-    <form action="/Artists/playlists" method="POST">
    
+   
+
     {% for e in  src %}
+    <form action="/artists/playlists" method="POST">
 <div class="showdiv">
-<h2>{{ e.artistName }}</h2>
-<h3>{{ e.name }}</h3>
+<h2 type="text" name="name" >{{ e.artistName }}</h2>
+<h3  type="text" name="album" >{{ e.name }}</h3>
 <!-- <h4>{{ e.albumName }}</h4> -->
 
-<audio class="audio" controls >
-  <source class="audio" src="{{ e.previewURL }}" type="audio/mpeg">
+<audio  controls >
+  <source name="aud" class="audio" src="{{ e.previewURL }}" type="audio/mpeg">
 </audio>
+
+
+<input type="submit" value="Add to Favorites" />
 </form>
 
-<form action="/Artists/playlists" method="POST">
-<input type="submit" value="Add to Playlist" />
-</form>
+
 </div>
 
- 
-
-</article>
 
 {% endfor %}
 
 
-
+</article>
 {% endblock %}
      

@@ -47,18 +47,19 @@ router.get("/new", (req, res) => {
 router.get("/playlists",(req,res)=>{
   Artists.find({ username: req.session.username  })
 
-  .then((artists) => {
-    console.log(artists);
-  res.render("artists/playlists.liquid",{artists})
+  .then((artistss) => {
+    console.log(artistss);
+  res.render("artists/playlists.liquid",{artistss})
 })
 })
 
 router.post("/playlists",(req,res)=>{
   req.body.username = req.session.username;
   //  const id = req.params.id
+  // console.log(req.body)
   Artists.create(req.body)
     .then((artists) => {
-      res.redirect("/Artists/playlists");
+      res.redirect("/artists/playlists");
     })
     .catch((error) => {
       console.log(error);
@@ -101,7 +102,7 @@ router.get("/:id", (req, res) => {
       });
     })
   
-});
+
 })
     
 
@@ -135,6 +136,7 @@ router.delete("/:id", (req, res) => {
     });
 });
 
+});
 
 })
 .catch(err => console.error(err));
