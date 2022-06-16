@@ -3,15 +3,18 @@
 
     {% for e in  src %}
     <form action="/artists/playlists" method="POST">
-<div class="showdiv">
-<h2 type="text" name="name" >{{ e.artistName }}</h2>
-<h3  type="text" name="album" >{{ e.name }}</h3>
-<!-- <h4>{{ e.albumName }}</h4> -->
 
+
+<div class="showdiv">
+<input class="hidden" type="text" name="name" value=" {{ e.artistName }} ">
+<input class="hidden" type="text" name="album" value=" {{ e.name }} " >
+<input class="hidden" type="text" name="aud" value=" {{ e.previewURL }} " >
+
+<h2>{{ e.artistName }}</h2>
+<h3> {{ e.name }} </h3>
 <audio  controls >
   <source name="aud" class="audio" src="{{ e.previewURL }}" type="audio/mpeg">
 </audio>
-
 
 <input type="submit" value="Add to Favorites" />
 </form>

@@ -12,10 +12,11 @@ img{
 body{
    
     background:url("https://images.unsplash.com/photo-1538438253612-287c9fc9217e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dGV4dCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80") ;
+    /* background:url("https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80") ; */
     color:rgb(182, 241, 239) ;
     transition: 500ms;
     background-size:auto;
-    margin: 0px;
+    margin-top: 0px;
 
 }
 .indexdiv{
@@ -66,19 +67,20 @@ button,input,a{
 
  text-align: center;
  color:rgb(26, 52, 39);
- background: rgba(0, 0, 0, 0.5);
+ background: rgba(0, 0, 0, 0.8);
  transition: 500ms;
  border: none;
  border-radius: 10%;
- width: 100px;
- height: 30px;
+ width: 150px;
+ height: 40px;
  color:white;
  align-items: center;
 align-content: center;
 }
 form{
     display: inline-block;
-
+    align-items: center;
+    align-content: center;
 }
 audio{
 left:50%;
@@ -86,6 +88,12 @@ text-align: center;
 align-items: center;
 transition: 500ms;
   backdrop-filter: blur(10px);
+}
+
+.plbotton{
+    margin-top:-30px ;
+    align-items: center;
+    align-content: center;
 }
 .indexdiv{
     display: inline-block;
@@ -166,8 +174,8 @@ header{
     height: 100px;
     background: rgba(0, 0, 0, 0.5);
     margin-bottom: 100px;
-    margin-top: 0px;
-    padding-top: 0px;
+    margin-top: -30px;
+    padding-top: 10px;
     
 }
 
@@ -182,4 +190,29 @@ header{
     transition: 500ms;
     filter:drop-shadow(10px 10px  3px rgb(31, 191, 165));
     display: inline-block;
+}
+
+.firstpages{
+    width: 500px;
+    height: 250px;
+    left:50%;
+text-align: center;
+align-items: center;
+transition: 500ms;
+  backdrop-filter: blur(10px);
+
+}
+fieldset{
+    width: 500px;
+    height: 250px;
+text-align: center;
+align-items: center;
+transition: 500ms;
+  backdrop-filter: blur(10px);
+  align-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hidden{
+    display:none;
 }

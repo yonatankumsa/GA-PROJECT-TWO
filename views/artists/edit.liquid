@@ -1,4 +1,5 @@
 {% layout "layout.liquid" %} {% block content %}
+<div class="firstpages" >
   <form action="/artists/{{artists._id}}?_method=PUT" method="POST">
     <fieldset>
       <label>
@@ -31,5 +32,5 @@
     </fieldset>
   
   </form>
-
+</div>
   {% endblock %}

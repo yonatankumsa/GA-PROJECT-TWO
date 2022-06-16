@@ -1,10 +1,10 @@
 {% layout "layout.liquid" %} {% block content %}
-    
+    <div class="plbutton" >
     <form action="/Artists/new" method="get">
         <input type="submit" value="Create A Track" />
-      </form><br>
+      </form>
         <a href="/Artists/"><button>Back to Main</button></a>
-
+      </div>
 
     {% for a in artistss %}
 <div class="pldiv">
@@ -15,9 +15,6 @@
     <source   name="aud" src="{{ a.aud }}" type="audio/mpeg">
   </audio>
  
-
-
-  
   <form action="/Artists/{{ a._id }}?_method=DELETE" method="POST">
     <input type="submit" value="Delete" />
   </form>

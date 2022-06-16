@@ -11,7 +11,7 @@ router.use((req, res, next) => {
 });
     
  
-fetch('https://api.napster.com/v2.2/playlists/top?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
+fetch('https://api.napster.com/v2.2/playlists/top?apikey=NTZmZjkwMTEtODAxZC00MmYwLThlYWMtY2MxM2I5MzBiY2Qy&limit=40')
 .then(response => response.json())
 .then(response => {
 
@@ -38,7 +38,7 @@ router.get("/new", (req, res) => {
   Artists.find({ username: req.session.username })
 
     .then((artists) => {
-      console.log(artists);
+      // console.log(artists);
   res.render("artists/new.liquid",{ artists });
 })
 });
@@ -53,11 +53,12 @@ router.get("/playlists",(req,res)=>{
 })
 })
 
-router.post("/playlists",(req,res)=>{
+router.post("/playlists", async (req,res)=>{
   req.body.username = req.session.username;
+  
   //  const id = req.params.id
-  // console.log(req.body)
-  Artists.create(req.body)
+  console.log("testing req.body",req.body)
+  await Artists.create(req.body)
     .then((artists) => {
       res.redirect("/artists/playlists");
     })
@@ -87,7 +88,7 @@ router.get("/:id/edit", (req, res) => {
 router.get("/:id", (req, res) => {
   // const id2 = JSON.parse(req.params.id)
   const id = req.params.id
-  fetch('https://api.napster.com/v2.0/playlists/'+ id +'/tracks?apikey=ZTk4OGExZDgtMGRlNS00OTgzLWExMmItNjJjY2E2YzNkNTg1&limit=40')
+  fetch('https://api.napster.com/v2.0/playlists/'+ id +'/tracks?apikey=NTZmZjkwMTEtODAxZC00MmYwLThlYWMtY2MxM2I5MzBiY2Qy&limit=40')
   .then(response2 => response2.json())
   .then(response2 => {
       
@@ -107,7 +108,7 @@ router.get("/:id", (req, res) => {
     
 
 
-
+});
 
 router.put("/:id", (req, res) => {
   const id = req.params.id;
@@ -136,7 +137,7 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-});
+
 
 })
 .catch(err => console.error(err));

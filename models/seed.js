@@ -4,10 +4,28 @@ const Artist = require("./artist");
 const db = mongoose.connection;
 
 
-fetch('http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=1f64c77f198e662756b17883ce861df4&format=json')
-.then(response => response.json())
-.then(response => {
-console.log(response)
+db.on('open',()=>{
+    
+
+      // Delete all builds
+  Artist.deleteMany({})
+  .then((deletedtracks) => {
+    // add the starter builds
+    Artist.create()
+      .then((newBuilds) => {
+        // log the new builds to confirm their creation
+        console.log(newBuilds)
+        db.close()
+      })
+      .catch((error) => {
+        console.log(error)
+        db.close()
+      })
+  })
+  .catch((error) => {
+    console.log(error)
+    db.close()
+  })
 })
 
 
