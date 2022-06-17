@@ -216,3 +216,36 @@ transition: 500ms;
 .hidden{
     display:none;
 }
+p{
+    color: black;
+font-size: 25px;
+backdrop-filter: blur(5px);
+align-items: center;
+text-align: center;
+background: rgba(0, 0, 0, 0.3);
+align-content: center;
+background:rgb(31, 191, 165);
+width:450px;
+}
+
+.lyrics{
+    display: inline-block;
+    /* background-color: red; */
+    width:450px;
+    height: 230px;
+    border-radius: 7px;
+    margin: 20px;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.8);
+    transition: 500ms;
+    align-content: center;
+    color: black;
+ 
+}
+
+#back{
+    position: absolute;
+    top:100px;
+    left: 20px;
+}

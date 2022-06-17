@@ -1,6 +1,7 @@
 const express = require("express");
 const Artists = require("../models/artist.js");
 const router = express.Router();
+// const fetch = require("node-fetch");
 
 router.use((req, res, next) => {
   if (req.session.loggedIn) {
@@ -69,7 +70,6 @@ router.post("/playlists", async (req,res)=>{
 
 })
 
-
 router.get("/:id/edit", (req, res) => {
   const id = req.params.id;
 
@@ -84,6 +84,22 @@ router.get("/:id/edit", (req, res) => {
     });
 });
 
+router.get("/lyrics",(req,res)=>{
+  res.render("artists/lyrics")
+  })
+  
+  router.post("/lyrics",(req,res)=>{
+    const name = req.body.name
+   const title = req.body.title
+  fetch(`https://api.lyrics.ovh/v1/${name}/${title}`)
+  .then(response => response.json())
+  .then(response => {
+  res.render("artists/lyrics",{ response })
+  
+  })
+  })
+  
+  
 
 router.get("/:id", (req, res) => {
   // const id2 = JSON.parse(req.params.id)
@@ -109,6 +125,8 @@ router.get("/:id", (req, res) => {
 
 
 });
+
+
 
 router.put("/:id", (req, res) => {
   const id = req.params.id;

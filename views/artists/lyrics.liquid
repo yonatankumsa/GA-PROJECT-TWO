@@ -1,0 +1,13 @@
+{% layout "layout.liquid" %} {% block content %}
+
+<div class="lyrics">
+    <form action="/artists/lyrics" method="POST">
+       Artist name: <input name="name" type="text">
+       Song Title: <input name="title" type="text">
+        <input type="submit" value="search">
+    </form>
+    <p>{{ response.lyrics  }}</p>
+</div>
+
+<a id="back" href="/Artists/"><button>Back to Main</button></a>
+{% endblock %}
