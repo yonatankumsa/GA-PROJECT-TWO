@@ -81,6 +81,24 @@ font-family: 'Nanum Brush Script', cursive;
 font-size: 20px;
 
 }
+button:hover,input:hover,a:hover{
+
+    text-align: center;
+    color:rgb(0, 0, 0);
+    background: rgb(5, 255, 197);
+    transition: 200ms;
+    border: none;
+    border-radius: 10%;
+    width: 150px;
+    height: 40px;
+    align-items: center;
+   align-content: center;
+   font-family: 'Nanum Brush Script', cursive;
+   font-size: 20px;
+   
+   }
+
+
 form{
     display: inline-block;
     align-items: center;
@@ -260,4 +278,7 @@ left: 40%;
 #audpl{
     position: relative;
     left:45%;
+}
+#main{
+    text-decoration: none;
 }

@@ -42,4 +42,9 @@ The user can also search lyrics for any song.
 
 ====================================
 ![](https://i.imgur.com/6iGlIGi.png)
+====================================
 
+====================================
+# ERD
+
+![](https://i.imgur.com/SkqUcSy.png)
