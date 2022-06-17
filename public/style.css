@@ -11,8 +11,8 @@ img{
 }
 body{
    
-    background:url("https://images.unsplash.com/photo-1538438253612-287c9fc9217e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dGV4dCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80") ;
-    /* background:url("https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80") ; */
+    /* background:url("https://images.unsplash.com/photo-1538438253612-287c9fc9217e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dGV4dCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80") ; */
+    background:url("https://images.unsplash.com/photo-1505773170783-58f82a520465?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwxOTM4ODgzfHxlbnwwfHx8fA%3D%3D&w=1000&q=80") ;
     color:rgb(182, 241, 239) ;
     transition: 500ms;
     background-size:auto;
@@ -76,6 +76,8 @@ button,input,a{
  color:white;
  align-items: center;
 align-content: center;
+font-family: 'Nanum Brush Script', cursive;
+
 }
 form{
     display: inline-block;
@@ -128,7 +130,7 @@ transition: 500ms;
     /* background-color: red; */
     width:300px;
     height: 230px;
-    border-radius: 7px;
+    border-radius: 20%;
     margin: 20px;
     align-items: center;
     backdrop-filter: blur(5px);
@@ -164,7 +166,7 @@ transition: 500ms;
     background: rgba(0, 0, 0, 0.5);
     transition: 500ms;
     border-radius: 5%;
-    filter:drop-shadow(10px 10px  3px rgb(31, 191, 165));
+    filter:drop-shadow(10px 10px  3px rgb(0, 0, 0));
 
 } 
 header{
@@ -217,15 +219,20 @@ transition: 500ms;
     display:none;
 }
 p{
-    color: black;
+    color: rgb(4, 251, 255);
 font-size: 25px;
 backdrop-filter: blur(5px);
 align-items: center;
 text-align: center;
-background: rgba(0, 0, 0, 0.3);
+background: rgba(0, 0, 0, 0.7);
 align-content: center;
-background:rgb(31, 191, 165);
+/* background:rgb(31, 191, 165); */
 width:450px;
+backdrop-filter: blur(10px);
+font-family: 'Nanum Brush Script', cursive;
+font-size: 30px;
+position: relative;
+left: 40%;
 }
 
 .lyrics{
@@ -248,4 +255,9 @@ width:450px;
     position: absolute;
     top:100px;
     left: 20px;
+}
+
+#audpl{
+    position: relative;
+    left:45%;
 }

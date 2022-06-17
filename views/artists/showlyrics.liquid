@@ -1,7 +1,7 @@
 {% layout "layout.liquid" %} {% block content %}
 
-<audio  controls >
-    <source name="aud" class="audio" src="{{ aud }}" type="audio/mpeg">
+<audio id="audpl" controls >
+    <source name="aud" id="audpl"  src="{{ aud }}" type="audio/mpeg">
   </audio>
   
 <p>{{ response.lyrics }}</p>
