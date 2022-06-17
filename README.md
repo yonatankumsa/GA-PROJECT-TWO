@@ -1,12 +1,13 @@
 
 # GA PROJECT ONE
 
-# Music App
+# Yonify
+A music App where a user can listen to their favorite artists songs from multiple playlists.
+The user have to create an account to start listning and enjoy the playlists. The user can also add a track from the playlists to their own library. The user can also create ,edit and delete tracks from their own music library.
+
 # app link -- 
-A music app where users login with their account and displays user favorites artists. and user can add artists  as their favorite artists user can edit or delete their artists aswell.
 
 # Tools Used
-
 
 - CSS
 - MongoDB
@@ -15,11 +16,17 @@ A music app where users login with their account and displays user favorites art
 - Javascript
 - Liquid
 
+# APIs Used
+
+Napster API
+Lyrics.ovh API
 # Appendix
 
 
 
-![](https://i.imgur.com/E5F9rpw.jpg)
-![](https://i.imgur.com/RXQEMCF.jpg)
-![](https://i.imgur.com/O7cqO6x.png)
+![](https://i.imgur.com/AcMluqC.png)
+![](https://i.imgur.com/2tYzNWO.png)
+![](https://i.imgur.com/tC7Zw1O.png)
+![](https://i.imgur.com/xpNFxbx.png)
+![](https://i.imgur.com/6iGlIGi.png)
 

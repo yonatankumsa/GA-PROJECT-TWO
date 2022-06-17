@@ -11,12 +11,13 @@ img{
 }
 body{
    
-    /* background:url("https://images.unsplash.com/photo-1538438253612-287c9fc9217e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dGV4dCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80") ; */
+    /* background:url("https://t4.ftcdn.net/jpg/02/52/34/07/360_F_252340761_vt9Yhi6noDDNUpuaKgiQWuSKEl8wtgmf.jpg") ; */
     background:url("https://images.unsplash.com/photo-1505773170783-58f82a520465?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwxOTM4ODgzfHxlbnwwfHx8fA%3D%3D&w=1000&q=80") ;
     color:rgb(182, 241, 239) ;
     transition: 500ms;
     background-size:auto;
     margin-top: 0px;
+
 
 }
 .indexdiv{
@@ -36,7 +37,7 @@ body{
 text-align: center;
 margin-bottom:120px;
 transition: 500ms;
-font-size: 70px;
+font-size: 90px;
 filter: drop-shadow(10px 10px 10px black);
 filter:drop-shadow(10px 10px  3px rgb(31, 191, 165))
 }
@@ -174,11 +175,12 @@ header{
     backdrop-filter: blur(10px);
     border-bottom-right-radius: 50% ;
     border-bottom-left-radius: 50% ;
-    height: 100px;
+    height: 130px;
     background: rgba(0, 0, 0, 0.5);
     margin-bottom: 100px;
     margin-top: -30px;
     padding-top: 10px;
+    margin-bottom: 130px;
     
 }
 
