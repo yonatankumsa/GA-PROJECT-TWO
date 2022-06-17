@@ -22,6 +22,7 @@
 <form action="/artists/lyricsshow" method="POST" >
   <input class="hidden" name="name" type="text" value=" {{ e.artistName }}" />
   <input  class="hidden" name="title" type="text" value=" {{ e.name }} " />
+  <input class="hidden" type="text" name="aud" value=" {{ e.previewURL }} " >
   <input type="submit" value="Show Lyrics" />
  </form>
   
