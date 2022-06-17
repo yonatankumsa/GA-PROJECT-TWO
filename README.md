@@ -1,5 +1,5 @@
 
-# GA PROJECT ONE
+# GA PROJECT TWO
 
 # Yonify
 A music App where a user can listen to their favorite artists songs from multiple playlists.
