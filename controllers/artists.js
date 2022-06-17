@@ -99,6 +99,16 @@ router.get("/lyrics",(req,res)=>{
   })
   })
   
+   router.post("/lyricsshow",(req,res)=>{
+    const name = req.body.name
+    const title = req.body.title
+    console.log("puysswdqwedqwdqecxqefdqedfqefdqewdqefcwefvdcadewqfweqfqsfefdwefsdcefsfu",req.body)
+    fetch(`https://api.lyrics.ovh/v1/${name}/${title}`)
+    .then(response => response.json())
+    .then(response => {
+    res.render("artists/showlyrics",{ response })
+    })
+  })
   
 
 router.get("/:id", (req, res) => {

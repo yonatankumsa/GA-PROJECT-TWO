@@ -19,8 +19,14 @@
 <input type="submit" value="Add to Favorites" />
 </form>
 
-</div>
+<form action="/artists/lyricsshow" method="POST" >
+  <input class="hidden" name="name" type="text" value=" {{ e.artistName }}" />
+  <input  class="hidden" name="title" type="text" value=" {{ e.name }} " />
+  <input type="submit" value="Show Lyrics" />
+ </form>
+  
 
+</div>
 
 {% endfor %}
 
