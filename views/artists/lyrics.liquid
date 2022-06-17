@@ -2,11 +2,11 @@
 
 <div class="lyrics">
     <form action="/artists/lyrics" method="POST">
-       Artist name: <input name="name" type="text">
-       Song Title: <input name="title" type="text">
+       Artist name:<input name="name" type="text"><br>
+       Song Title:   <input name="title" type="text"><br>
         <input type="submit" value="search">
     </form>
-    <p>{{ response.lyrics  }}</p>
+    <p class="lyp">{{ response.lyrics  }}</p>
 </div>
 
 <a id="back" href="/Artists/"><button>Back to Main</button></a>
