@@ -8,7 +8,8 @@ const ArtistsRouter = require("./controllers/artists.js");
 const UserRouter = require("./controllers/users.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-
+// import fetch  from "node-fetch";
+// const fetch = require("node-fetch");
 
 const app = require("liquid-express-views")(express(), {
   root: [path.resolve(__dirname, "views/")],

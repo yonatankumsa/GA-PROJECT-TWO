@@ -1,7 +1,7 @@
 const express = require("express");
 const Artists = require("../models/artist.js");
 const router = express.Router();
-// const fetch = require("node-fetch");
+const fetch = require("node-fetch");
 
 router.use((req, res, next) => {
   if (req.session.loggedIn) {
